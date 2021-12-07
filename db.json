@@ -6,6 +6,8 @@
       "description": "Ma description",
       "startDate": "2021-12-03",
       "endDate": "2021-12-06",
+      "adresse": "59, rue d'Outsiplou",
+      "localite": "1400 Nivelles",
       "participantId": 1,
       "participant": {
         "id": 1,

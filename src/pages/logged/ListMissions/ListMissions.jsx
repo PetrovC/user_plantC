@@ -11,7 +11,7 @@ const Mission = (props) =>{
 
     const navigate = useNavigate();
     
-    return <li key={id} onClick={() => {navigate(id)}}>
+    return <li key={id} onClick={() => {navigate('/details/'+ id)}}>
         <Card> {moment(startDate).format('DD/MM/YY')} - {moment(endDate).format('DD/MM/YY')}</Card  >
         <Card>{type}</Card>
         <Card>{location}</Card>
