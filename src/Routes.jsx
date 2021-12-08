@@ -6,7 +6,7 @@ import DetailMission from "./pages/logged/detailMissions/detailMission";
 export const Routes = [
     { path : '', element: <Admin/>, children: [
         { path: '', element: <ListMissions/>},
-        { path: 'details/:id', element: <DetailMission/>}
+        { path: 'details', element: <DetailMission/>},
     ]},
     {path: 'login', element: <Loggin/>}
 ]

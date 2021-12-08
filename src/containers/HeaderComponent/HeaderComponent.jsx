@@ -11,7 +11,6 @@ const HeaderComponent = (props) => {
     const handleToPrevious = () => {
         navigate(-1);
     }
-    console.log(props);
     
     useEffect( () => {
 

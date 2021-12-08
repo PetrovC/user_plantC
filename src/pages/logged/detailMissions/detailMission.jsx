@@ -1,32 +1,24 @@
 import HeaderComponent from '../../../containers/HeaderComponent/HeaderComponent'
-import { Card, TextField } from "@mui/material";
-import { useParams } from 'react-router';
+import { TextField } from "@mui/material";
 import CommButtons from '../../../containers/CommButtons/CommButtons';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { selectMission } from '../../../store/missionsSlice';
 
 const DetailMission = () => {
 
     const titre = 'Description';
-    const {id} = useParams();
-    const [data, setData] = useState();
-    
-    useEffect(() => {
-        axios.get("http://localhost:4000/mission/" + id)
-        .then(({data}) => {
-            setData(data);
-        })
-    },[id])
+
+    const selectedMission = useSelector(state => state.missions.selectedMission)
 
     return(
         <>
         <HeaderComponent value={titre}/>
-        {data && <div>
-            <TextField disabled label="Date" value={`${data.startDate} - ${data.endDate}`}/>
-            <TextField disabled label="Adresse" value={data.adresse}/>
-            <TextField disabled label="Localité" value={data.localite}/>
-            <TextField disabled label="Description" value={data.description}/>
-            <TextField disabled label="Info Mission" value={data.type}/>
+        {selectMission && <div>
+            <TextField disabled label="Date" value={`${selectedMission.startDate} - ${selectedMission.endDate}`}/>
+            <TextField disabled label="Adresse" value={selectedMission.adresse}/>
+            <TextField disabled label="Localité" value={selectedMission.localite}/>
+            <TextField disabled label="Description" value={selectedMission.description}/>
+            <TextField disabled label="Info Mission" value={selectedMission.type}/>
         </div>}
         <CommButtons/>
         </>

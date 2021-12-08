@@ -1,17 +1,26 @@
-import { Card, TextField } from "@mui/material";
-import axios from "axios";
+import { Card } from "@mui/material";
 import moment from 'moment';
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import { selectMission } from "../../../store/missionsSlice"
 
 
 const Mission = (props) =>{
     const {id, startDate, endDate, type, location} = props;
 
+    const dispatch = useDispatch()
     const navigate = useNavigate();
     
-    return <li key={id} onClick={() => {navigate('/details/'+ id)}}>
+    const mission = useSelector((state) => state.missions.list.find(e => e.id === id))
+
+    
+    const OnClick = () => {
+        dispatch(selectMission(mission))
+        navigate('/details')
+    }
+    
+    
+    return <li key={id} onClick={() => OnClick()}>
         <Card> {moment(startDate).format('DD/MM/YY')} - {moment(endDate).format('DD/MM/YY')}</Card  >
         <Card>{type}</Card>
         <Card>{location}</Card>
@@ -23,16 +32,6 @@ const Mission = (props) =>{
 export const ListMissions = () => {
     
     const missions = useSelector(state => state.missions.list);
-
-    
-    // const [missions, setMissions] = useState([]);
-
-    // useEffect( () => {
-    //     axios.get("http://localhost:4000/mission")
-    //     .then(({data}) =>{
-    //         setMissions(data);
-    //     })
-    // },[])
 
     return(
         <>

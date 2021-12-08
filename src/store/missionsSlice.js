@@ -7,11 +7,12 @@ export const missionsSlice = createSlice({
         list: [],
     },
     reducers:{
-        loadMissions: (state, {playload} ) => {
-            state.list = playload;
+        loadMissions: (state, {payload} ) => {
+            state.list = payload;
+
         },
-        selectMission: (state, {playload}) => {
-            state.selectedMission = {...playload}
+        selectMission: (state, {payload}) => {
+            state.selectedMission = payload
         }
     },
 })
