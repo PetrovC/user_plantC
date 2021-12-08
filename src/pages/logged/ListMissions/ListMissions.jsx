@@ -1,5 +1,6 @@
 import { Card } from "@mui/material";
 import moment from 'moment';
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { selectMission } from "../../../store/missionsSlice"
@@ -32,6 +33,11 @@ const Mission = (props) =>{
 export const ListMissions = () => {
     
     const missions = useSelector(state => state.missions.list);
+    const dispatch = useDispatch();
+    
+    useEffect( () => {
+        dispatch(selectMission(null))
+    }, [])
 
     return(
         <>
