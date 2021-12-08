@@ -1,7 +1,7 @@
 import { Card, TextField } from "@mui/material";
 import axios from "axios";
 import moment from 'moment';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -22,14 +22,17 @@ const Mission = (props) =>{
 
 export const ListMissions = () => {
     
-    const [missions, setMissions] = useState([]);
+    const missions = useSelector(state => state.missions.list);
 
-    useEffect( () => {
-        axios.get("http://localhost:4000/mission")
-        .then(({data}) =>{
-            setMissions(data);
-        })
-    },[])
+    
+    // const [missions, setMissions] = useState([]);
+
+    // useEffect( () => {
+    //     axios.get("http://localhost:4000/mission")
+    //     .then(({data}) =>{
+    //         setMissions(data);
+    //     })
+    // },[])
 
     return(
         <>
