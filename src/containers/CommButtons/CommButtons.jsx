@@ -4,7 +4,7 @@ import { useNavigate } from "react-router"
 
 const CommButtons = () => {
     
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
     const handleToPhoto = () => {
         console.log("Finaliser works");
     }
@@ -12,6 +12,7 @@ const CommButtons = () => {
         console.log("Reporter works");
     }
     const handleToProblem = () => {
+        navigate('/commentaries')
         console.log("Problem works")
     }
     

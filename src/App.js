@@ -1,8 +1,8 @@
 import React from 'react';
 import { useRoutes } from 'react-router';
-import logo from './logo.svg';
 import {Routes} from './Routes'
 import './App.css';
+import Alertes from './containers/Alertes/Alertes';
 
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
   return (
     <>
       <>
+      <Alertes/>
       {routes}
       </>
     </>

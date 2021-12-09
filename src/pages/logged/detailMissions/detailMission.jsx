@@ -1,19 +1,18 @@
 import HeaderComponent from '../../../containers/HeaderComponent/HeaderComponent'
 import { TextField } from "@mui/material";
 import CommButtons from '../../../containers/CommButtons/CommButtons';
-import { useSelector } from 'react-redux';
-import { selectMission } from '../../../store/missionsSlice';
+import useSelectedMission from '../../../hooks/selectedMissionHook';
 
 const DetailMission = () => {
+    
+    const selectedMission = useSelectedMission()
 
     const titre = 'Description';
-
-    const selectedMission = useSelector(state => state.missions.selectedMission)
 
     return(
         <>
         <HeaderComponent value={titre}/>
-        {selectMission && <div>
+        {selectedMission && <div>
             <TextField disabled label="Date" value={`${selectedMission.startDate} - ${selectedMission.endDate}`}/>
             <TextField disabled label="Adresse" value={selectedMission.adresse}/>
             <TextField disabled label="Localité" value={selectedMission.localite}/>
