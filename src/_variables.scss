@@ -1,0 +1,12 @@
+$vertApp: #0B524F;
+$grisDisabled: #C4C4C4;
+$blancFond: #F8F7FD;
+$rougeProblem: #9E3600;
+
+@mixin fontButton{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+}

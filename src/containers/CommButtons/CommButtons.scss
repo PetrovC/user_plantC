@@ -1,0 +1,23 @@
+.blockButton{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonComm, .buttonProblem{
+    margin: 0.5rem;
+    padding: 0.5rem 1.5rem;
+
+    border-radius: 5px;
+    border: none;
+    background-color: #0B524F;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+.buttonProblem{
+    background-color: #9E3600;
+    border-radius: 50px;
+}

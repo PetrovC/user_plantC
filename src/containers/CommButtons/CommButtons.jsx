@@ -1,4 +1,4 @@
-
+import './CommButtons.scss'
 import { useNavigate } from "react-router"
 
 
@@ -17,13 +17,13 @@ const CommButtons = () => {
     }
     
     return(
-        <>
+        <div className='blockButton'>
         <span>
             <button className='buttonComm' onClick={handleToPhoto}>Finaliser</button>
             <button className='buttonComm'onClick={handleToSnooze}>Reporter</button>
         </span>
         <button className='buttonProblem'onClick={handleToProblem}>Problème ?</button>
-        </>
+        </div>
     )
 }
 export default CommButtons

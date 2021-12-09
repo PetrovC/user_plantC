@@ -30,7 +30,7 @@ const Commentaries = () => {
         const type = data.aide ? "aide" : data.imprevu ? "imprevu" : "autre";
         axios.post('http://localhost:4000/commentaire', {type, message, missionId : mission?.id ?? 1, participantId:1})
         .then(() => {
-            dispatch(showAlerte({severity: 'success', message: "Bien envoyée. Nous vous recontacterons dès que possible."}));
+            dispatch(showAlerte({severity: 'success', message: "Bien envoyé. Nous vous recontacterons dès que possible."}));
             navigate(-1);
         })
     }

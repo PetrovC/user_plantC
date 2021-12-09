@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRoutes } from 'react-router';
 import {Routes} from './Routes'
-import './App.css';
+import './App.scss';
 import Alertes from './containers/Alertes/Alertes';
 
 function App() {

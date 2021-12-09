@@ -27,6 +27,13 @@
       "missionId": 3,
       "participantId": 1,
       "id": 4
+    },
+    {
+      "type": "aide",
+      "message": "besoin d'aide",
+      "missionId": 3,
+      "participantId": 1,
+      "id": 5
     }
   ],
   "mission": [

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
+import './HeaderComponent.scss';
 
 const HeaderComponent = (props) => {
     
@@ -16,12 +17,12 @@ const HeaderComponent = (props) => {
 
     }, [props])
     return(
-        <div>
-            <h3>
-                <span><button onClick={handleToPrevious}>Retour</button></span> 
-                <span>{value}</span>
-                <span><button onClick={handleToHome}>Home</button></span>
-            </h3>
+        <div className='blockHeader'>
+            
+            <span><button onClick={handleToPrevious}>Retour</button></span> 
+            <h3>{value}</h3>
+            <span><button onClick={handleToHome}>Home</button></span>
+            
         </div>
     )
 }
