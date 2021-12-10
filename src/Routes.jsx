@@ -1,4 +1,5 @@
 import { Loggin } from "./pages/loggin/loggin";
+import Login from "./pages/Login/Login";
 import { Admin } from "./pages/logged/Admin";
 import { ListMissions } from "./pages/logged/ListMissions/ListMissions"
 import DetailMission from "./pages/logged/detailMissions/detailMission";
@@ -10,5 +11,5 @@ export const Routes = [
         { path: 'details', element: <DetailMission/>},
         { path: 'commentaries', element : <Commentaries/>}
     ]},
-    {path: 'login', element: <Loggin/>}
+    {path: 'login', element: <Login/>}
 ]

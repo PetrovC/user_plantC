@@ -4,8 +4,12 @@ import { useDispatch } from "react-redux";
 import { Outlet } from "react-router";
 import { Header } from "../../containers/Header/Header"
 import { loadMissions } from "../../store/missionsSlice";
+import { useAuth } from "../../hooks/auth-hook";
 
 export const Admin = ()=>{
+
+    useAuth();
+
 
     const dispatch = useDispatch();
 
