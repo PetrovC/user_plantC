@@ -1,10 +1,10 @@
-import { Card } from "@mui/material";
+import { Card, CardContent, Typography } from "@mui/material";
 import moment from 'moment';
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { selectMission } from "../../../store/missionsSlice"
-
+import './ListMissions.scss'
 
 const Mission = (props) =>{
     const {id, startDate, endDate, type, location} = props;
@@ -22,9 +22,14 @@ const Mission = (props) =>{
     
     
     return <li key={id} onClick={() => OnClick()}>
-        <Card> {moment(startDate).format('DD/MM/YY')} - {moment(endDate).format('DD/MM/YY')}</Card  >
-        <Card>{type}</Card>
-        <Card>{location}</Card>
+        <Card>
+            <CardContent>
+
+                <Typography variant="h6" component="div" > {moment(startDate).format('DD/MM/YY')} - {moment(endDate).format('DD/MM/YY')}</Typography>
+                <CardContent>{type}</CardContent>
+                <CardContent>{location}</CardContent>
+            </CardContent>
+        </Card>
 
     </li>
 }
@@ -41,7 +46,7 @@ export const ListMissions = () => {
 
     return(
         <>
-        <div>
+        <div className='list'>
             <h3>Agenda</h3>
             <div>
                 <ul>
