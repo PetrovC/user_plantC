@@ -13,7 +13,7 @@ export const Header = () => {
 
     return(
         <header>
-            <img src='assets/img/PlantC.png' alt="logo" className="logo mobile"/>
+            <img src='assets/img/PlantC.png' alt="logo" className="logo-mobile"/>
             <div>
                 <Button disabled={!isLogged} type="button" color="primary" onClick= {() => dispatch(logoutRequest())}>Se déconnecter</Button>
             </div>

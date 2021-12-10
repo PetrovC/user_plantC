@@ -6,7 +6,7 @@ import { Controller, useForm } from "react-hook-form";
 import {LoginRequest, FalseLoginRequest} from '../../authentication/login/actionLogin'
 import {checkStore} from '../../store/storeListen'
 import { useLogged } from "../../hooks/logged-hook";
-//import './Login.scss'
+import './Login.scss'
 
 const Login = () => {
     useLogged()
@@ -46,22 +46,23 @@ const Login = () => {
     return (
         <div>
             <main className="auth">
-                <Card variant="outlined">
+                <img src='assets/img/PlantC.png' alt="logo" className="logo-mobile auth-logo"/>
+                <Card variant="outlined" className='card-auth'>
                     <form onSubmit= {handleSubmit(submitRequest)}>
-                        <div>
+                        <div className='form-group'>
                             <Controller
                             control={control}
                             name='email' 
                             render={({field}) =><TextField {...field} type="email" label="Email" variant="outlined" /> }/>
                         </div>
-                        <div>
+                        <div className='form-group'>
                             <Controller
                             control={control}
                             name='password' 
                             render={({field}) =><TextField {...field} type="password" label="Password" variant="outlined" /> }/>
                         </div>
-                        <div>
-                            <Button disabled={loginState.isLogged} type="submit" color="primary">Se connecter</Button>
+                        <div className='form-group'>
+                            <Button disabled={loginState.isLogged} type="submit" color="primary" className='bouton-auth'>Valider</Button>
                         </div>
                     </form>            
                 </Card>
