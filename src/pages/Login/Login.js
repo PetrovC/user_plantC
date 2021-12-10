@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from 'react'
 import { Controller, useForm } from "react-hook-form";
 import {LoginRequest, FalseLoginRequest} from '../../authentication/login/actionLogin'
-import {checkStore} from '../../store/storeListen'
+//import {checkStore} from '../../store/storeListen'
 import { useLogged } from "../../hooks/logged-hook";
 import './Login.scss'
 
@@ -24,30 +24,30 @@ const Login = () => {
         password: ''
     }
 
-    const { control, handleSubmit, reset, formState: { errors } } = useForm({defaultValues})
+    const { control, handleSubmit, reset, watch, formState: { errors } } = useForm({defaultValues})
 
     const submitRequest = (data) => {
         const dataDetails = {  
             email: data.email,
             password: data.password,
         }
-        console.log(dataDetails)
 
         // //!/ faux login en attendant le déploiement du backend /!//
         // //!/ A remplacer par le loginRequest ci-dessous /!//
 
         dispatch(FalseLoginRequest({email: dataDetails.email, password: dataDetails.password}))
-        checkStore()
 
         //dispatch(LoginRequest({email: dataDetails.email, password: dataDetails.password}))
         reset()
     }
+    const email = watch('email') === '';
+    const mdp = watch('password') === '';
 
     return (
         <div>
             <main className="auth">
                 <img src='assets/img/PlantC.png' alt="logo" className="logo-mobile auth-logo"/>
-                <Card variant="outlined" className='card-auth'>
+                <Card variant="outlined" sx={{border: 0}} >
                     <form onSubmit= {handleSubmit(submitRequest)}>
                         <div className='form-group'>
                             <Controller
@@ -61,8 +61,9 @@ const Login = () => {
                             name='password' 
                             render={({field}) =><TextField {...field} type="password" label="Password" variant="outlined" /> }/>
                         </div>
+                        {/* trouver un moyen pour griser le bouton quand il est disabled */}
                         <div className='form-group'>
-                            <Button disabled={loginState.isLogged} type="submit" color="primary" className='bouton-auth'>Valider</Button>
+                            <button disabled={loginState.isLogged || mdp ||email} type="submit" className='buttonSend'>Valider</button>
                         </div>
                     </form>            
                 </Card>

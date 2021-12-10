@@ -1,4 +1,3 @@
-import { Loggin } from "./pages/loggin/loggin";
 import Login from "./pages/Login/Login";
 import { Admin } from "./pages/logged/Admin";
 import { ListMissions } from "./pages/logged/ListMissions/ListMissions"

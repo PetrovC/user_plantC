@@ -7,6 +7,7 @@ import axios from 'axios';
 import { showAlerte } from '../../../store/alertesSlice';
 import { useNavigate } from 'react-router';
 import useSelectedMission from '../../../hooks/selectedMissionHook';
+import './Commentaries.scss'
 
 const Commentaries = () => {
     
@@ -43,31 +44,31 @@ const Commentaries = () => {
     return(
         <>
         <HeaderComponent value={titre}/>
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="commentaries">
+            <form onSubmit={handleSubmit(onSubmit)} className="commentaries">
                 
             <Controller name="aide"
                         control={control}
                         render={({field}) => 
                         <TextField {...field}
                         disabled={ imprevu || autre }
-                        label="Besoin d'aide"/>}
+                        label="Besoin d'aide" sx={{m:1.5}}/>}
                         />
             <Controller name='imprevu'
                         control={control}
                         render={({field}) =>
                         <TextField {...field}
                         disabled={ aide || autre }
-                        label="Imprévu/retard"/>}
+                        label="Imprévu/retard" sx={{m:1.5}}/>}
                         />
             <Controller name='autre'
                         control={control}
                         render={({field}) =>  
                         <TextField {...field}
                         disabled={ aide || imprevu }
-                        label="Autre"/>}
+                        label="Autre" sx={{m:1.5}}/>}
                         />
-            <Button type='submit'>Envoyer</Button>
+            <button type='submit' className="buttonSend">Envoyer</button>
             </form>
         </div>
         </>

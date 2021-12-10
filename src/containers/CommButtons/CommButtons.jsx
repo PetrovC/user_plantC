@@ -13,7 +13,6 @@ const CommButtons = () => {
     }
     const handleToProblem = () => {
         navigate('/commentaries')
-        console.log("Problem works")
     }
     
     return(

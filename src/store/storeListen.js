@@ -1,8 +1,8 @@
-import store from './store'
+// import store from './store'
 
-export const checkStore = () =>{
-    store.subscribe(() => {
-        console.log('state updates')
-        console.log(store.getState())
-    })
-}
+// export const checkStore = () =>{
+//     store.subscribe(() => {
+//         console.log('state updates')
+//         console.log(store.getState())
+//     })
+// }

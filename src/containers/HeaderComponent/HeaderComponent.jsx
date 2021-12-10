@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import './HeaderComponent.scss';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import HomeIcon from '@mui/icons-material/Home';
 
 const HeaderComponent = (props) => {
     
@@ -18,10 +20,9 @@ const HeaderComponent = (props) => {
     }, [props])
     return(
         <div className='blockHeader'>
-            
-            <span><button onClick={handleToPrevious}>Retour</button></span> 
+            <ArrowBackIcon onClick={handleToPrevious} sx={{padding: 2.5}}/>
             <h3>{value}</h3>
-            <span><button onClick={handleToHome}>Home</button></span>
+            <HomeIcon onClick={handleToHome} sx={{padding: 2.5}} />
             
         </div>
     )
