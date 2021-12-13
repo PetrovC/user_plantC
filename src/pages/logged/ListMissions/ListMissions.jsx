@@ -26,12 +26,11 @@ const Mission = (props) =>{
     
     return <li key={id} onClick={() => OnClick()}>
         <Card>
-            <CardContent>
-
-                <Typography variant="h6" component="div" > {moment(date_Debut).format('DD/MM/YY')} - {moment(date_Fin).format('DD/MM/YY')}</Typography>
-                <CardContent>{type}</CardContent>
-                <CardContent>{projet?.localisation.adressLine1} {projet?.localisation.adressLine2}, {projet?.localisation.number} </CardContent>
-                <CardContent>{projet?.localisation.zipCode} {projet?.localisation.city}, {projet?.localisation.country} </CardContent>
+            <CardContent sx={{my:1, mx:4, p:1}}>
+                <Typography variant="h6" component="div"> {moment(date_Debut).format('DD/MM/YY')} - {moment(date_Fin).format('DD/MM/YY')}</Typography>
+                <CardContent sx={{my:0,mx:0, p:0, textAlign: "left"}}>{type}</CardContent>
+                {/* <CardContent sx={{m:0, p:0.5, textAlign: "left"}}>{projet?.localisation.adressLine1} {projet?.localisation.adressLine2}, {projet?.localisation.number} </CardContent> */}
+                <CardContent sx={{my:0,mx:0, p:0, textAlign: "left"}}>{projet?.localisation.zipCode} {projet?.localisation.city}, {projet?.localisation.country} </CardContent>
             </CardContent>
         </Card>
 
@@ -56,8 +55,8 @@ export const ListMissions = () => {
     return(
         <>
         <div className='list'>
-            <h3>Agenda</h3>
-            <h3>{decoded_token.prenom} {decoded_token.nom}</h3>
+            <h2>Agenda</h2>
+            <p className="titreList">{decoded_token.prenom} {decoded_token.nom}</p>
             <div>
                 <ul>
                     { missions.map((mission) => <Mission key={mission.id} {...mission} />)}

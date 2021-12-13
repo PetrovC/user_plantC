@@ -47,6 +47,7 @@ const Login = () => {
         <div>
             <main className="auth">
                 <img src='assets/img/PlantC.png' alt="logo" className="logo-mobile auth-logo"/>
+                <h2>Se Connecter</h2>
                 <Card variant="outlined" sx={{border: 0}} >
                     <form onSubmit= {handleSubmit(submitRequest)}>
                         <div className='form-group'>
