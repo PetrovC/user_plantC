@@ -13,7 +13,6 @@ export const Admin = ()=>{
     const token = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJ0ZXN0MkBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InVzZXIiLCJpZCI6MSwiZm9uY3Rpb24iOiJDaXRveWVuIiwibm9tIjoidGVzdDIiLCJwcmVub20iOiJ0ZXN0MiIsImVtYWlsIjoidGVzdDJAZXhhbXBsZS5jb20iLCJ1c2VybGV2ZWwiOiJ1c2VyIiwiaWRlbnRpZmllciI6IjEiLCJyb2xlcyI6WyJ1c2VyIl0sImVzdFZlcmlmaWUiOmZhbHNlfQ.97QnR1wZcrjoe1hKOxd2PsGYe280bQIMfnVa8vKBoLKJ88Sc9naAW_ubwkTa6vssOWLQ-HzT0fOVXYzRDLzqsg"
     //const token = useSelector(state => state.login.token)
     const decoded_token = jwtDecode(token)
-    console.log(decoded_token.id)
 
 
     const dispatch = useDispatch();
