@@ -19,8 +19,8 @@ export const Admin = ()=>{
     const dispatch = useDispatch();
 
     useEffect(() => {
-        //axios.get( process.env.REACT_APP_API_URL + "/tache/" ) // + token 'http://192.168.10.60:81/api/Tache/ByProjectID/1'
-        axios.get( 'http://192.168.10.60:81/api/' + "Tache/ByProjectID/" + decoded_token.id ) 
+        axios.get( process.env.REACT_APP_API_URL + "/tache/" ) // + token 'http://192.168.10.60:81/api/Tache/ByProjectID/1'
+        //axios.get( 'http://192.168.10.60:81/api/' + "Tache/ByProjectID/" + decoded_token.id, {headers:{Authorization : 'Bearer ' + token}} ) 
         .then(({data}) => {
             dispatch(loadMissions(data))
         }).catch();

@@ -5,15 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router";
 import { selectMission } from "../../../store/missionsSlice"
 import './ListMissions.scss'
+import jwtDecode from "jwt-decode";
 
 const Mission = (props) =>{
+    
+    
     const {id, date_Debut, date_Fin, type, projet} = props;
-
+    
     const dispatch = useDispatch()
     const navigate = useNavigate();
     
     const mission = useSelector((state) => state.missions.list.find(e => e.id === id))
-
+    
     
     const OnClick = () => {
         dispatch(selectMission(mission))
@@ -37,6 +40,11 @@ const Mission = (props) =>{
 
 
 export const ListMissions = () => {
+    // à modifier
+    const token = "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJ0ZXN0MkBleGFtcGxlLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNCIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InVzZXIiLCJpZCI6MSwiZm9uY3Rpb24iOiJDaXRveWVuIiwibm9tIjoidGVzdDIiLCJwcmVub20iOiJ0ZXN0MiIsImVtYWlsIjoidGVzdDJAZXhhbXBsZS5jb20iLCJ1c2VybGV2ZWwiOiJ1c2VyIiwiaWRlbnRpZmllciI6IjEiLCJyb2xlcyI6WyJ1c2VyIl0sImVzdFZlcmlmaWUiOmZhbHNlfQ.97QnR1wZcrjoe1hKOxd2PsGYe280bQIMfnVa8vKBoLKJ88Sc9naAW_ubwkTa6vssOWLQ-HzT0fOVXYzRDLzqsg"
+    //const token = useSelector(state => state.login.token)
+    const decoded_token = jwtDecode(token)
+    //à modifier
     
     const missions = useSelector(state => state.missions.list);
     const dispatch = useDispatch();
@@ -49,6 +57,7 @@ export const ListMissions = () => {
         <>
         <div className='list'>
             <h3>Agenda</h3>
+            <h3>{decoded_token.prenom} {decoded_token.nom}</h3>
             <div>
                 <ul>
                     { missions.map((mission) => <Mission key={mission.id} {...mission} />)}
