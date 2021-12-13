@@ -7,7 +7,7 @@ import { selectMission } from "../../../store/missionsSlice"
 import './ListMissions.scss'
 
 const Mission = (props) =>{
-    const {id, startDate, endDate, type, location} = props;
+    const {id, date_Debut, date_Fin, type, projet} = props;
 
     const dispatch = useDispatch()
     const navigate = useNavigate();
@@ -25,9 +25,10 @@ const Mission = (props) =>{
         <Card>
             <CardContent>
 
-                <Typography variant="h6" component="div" > {moment(startDate).format('DD/MM/YY')} - {moment(endDate).format('DD/MM/YY')}</Typography>
+                <Typography variant="h6" component="div" > {moment(date_Debut).format('DD/MM/YY')} - {moment(date_Fin).format('DD/MM/YY')}</Typography>
                 <CardContent>{type}</CardContent>
-                <CardContent>{location}</CardContent>
+                <CardContent>{projet?.localisation.adressLine1} {projet?.localisation.adressLine2}, {projet?.localisation.number} </CardContent>
+                <CardContent>{projet?.localisation.zipCode} {projet?.localisation.city}, {projet?.localisation.country} </CardContent>
             </CardContent>
         </Card>
 

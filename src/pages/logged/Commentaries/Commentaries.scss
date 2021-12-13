@@ -5,3 +5,9 @@
     flex-direction: column;
     margin: 2rem 0rem;
 }
+input.Mui-disabled {
+    color: #0B524F ;
+    font-weight: bolder;
+    -webkit-text-fill-color: unset!important;
+    cursor: pointer;
+}
