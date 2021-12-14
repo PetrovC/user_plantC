@@ -2,6 +2,7 @@ import {LOGIN, LOGIN_SUCCESS, LOGIN_ERROR } from './typeLogin'
 import {LOGOUT } from '../logout/typeLogout'
 
 const initialStateComments = {
+    __persist : true,
     isLoading: false,
     isLogged: false,
     token: '',
