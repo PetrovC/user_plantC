@@ -45,39 +45,38 @@
   ],
   "tache": [
     {
-      "id":2,
+      "id": 2,
       "id_Participant": 1,
-      "date_Debut":"2021-12-06",
-      "date_Fin":"2021-12-09",
+      "date_Debut": "2021-12-06",
+      "date_Fin": "2021-12-09",
       "id_Projet": 1,
-      "type":"Arroser",
-      "description":"Description bidon",
+      "type": "Arroser",
+      "description": "Description bidon",
       "est_Assigne": false,
       "est_Termine": false,
-      "projet":{
-        "id" : 1,
-        "reference":"ROLLY1",
+      "projet": {
+        "id": 1,
+        "reference": "ROLLY1",
         "infrastructure": null,
         "nbArbre": null,
-        "nbFruits" :null,
+        "nbFruits": null,
         "metre": null,
         "hectares": null,
-        "idLocalisation":1,
+        "idLocalisation": 1,
         "tonnesCO2": 0,
         "heuresTravail": 0,
         "contribution": 0,
         "listeTags": null,
-        "localisation":{
+        "localisation": {
           "adressLine1": "Rue des Bains",
-          "adressLine2":null,
+          "adressLine2": null,
           "number": 3,
-          "zipCode":1400,
+          "zipCode": 1400,
           "city": "Nivelles",
           "country": "Belgique"
         }
       }
     },
-    
     {
       "type": "Nourrir diego",
       "description": "",

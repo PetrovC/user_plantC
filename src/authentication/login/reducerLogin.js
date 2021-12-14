@@ -2,7 +2,7 @@ import {LOGIN, LOGIN_SUCCESS, LOGIN_ERROR } from './typeLogin'
 import {LOGOUT } from '../logout/typeLogout'
 
 const initialStateComments = {
-    __persist : true,
+
     isLoading: false,
     isLogged: false,
     token: '',
@@ -24,7 +24,7 @@ const reducerLogin = (state = initialStateComments, action) => {
                 ...state,
                 isLoading: false,
                 isLogged: true,
-                token: action.payload,
+                token: action.payload.token,
                 error: ''
             }
         case LOGIN_ERROR:

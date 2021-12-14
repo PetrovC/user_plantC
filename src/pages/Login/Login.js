@@ -35,9 +35,9 @@ const Login = () => {
         // //!/ faux login en attendant le déploiement du backend /!//
         // //!/ A remplacer par le loginRequest ci-dessous /!//
 
-        dispatch(FalseLoginRequest({email: dataDetails.email, password: dataDetails.password}))
+        //dispatch(FalseLoginRequest({email: dataDetails.email, password: dataDetails.password}))
 
-        //dispatch(LoginRequest({email: dataDetails.email, password: dataDetails.password}))
+        dispatch(LoginRequest({email: dataDetails.email, password: dataDetails.password}))
         reset()
     }
     const email = watch('email') === '';
