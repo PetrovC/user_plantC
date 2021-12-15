@@ -68,7 +68,7 @@ const Commentaries = () => {
                         disabled={ aide || imprevu }
                         label="Autre" sx={{m:1.5}}/>}
                         />
-            <button type='submit' className="buttonSend">Envoyer</button>
+            <button  disabled= {aide && imprevu && autre}type='submit' className="buttonSend">Envoyer</button>
             </form>
         </div>
         </>

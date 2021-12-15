@@ -5,7 +5,7 @@ const loginKey = "login"
 let localdata = JSON.parse(localStorage.getItem(loginKey))
 
 const initialStateComments = localdata || {
-    
+// const initialStateComments ={   
     isLoading: false,
     isLogged: false,
     token: '',
@@ -22,14 +22,14 @@ const reducerLogin = (state = initialStateComments, action) => {
                 token: '',
                 error: ''
             }
-        case LOGIN_SUCCESS:
-            localStorage.setItem(loginKey, JSON.stringify({
-                ...state,
-                isLoading: false,
-                isLogged: true,
-                token: action.payload,
-                error: ''
-            }))
+            case LOGIN_SUCCESS:
+                localStorage.setItem(loginKey, JSON.stringify({
+                    ...state,
+                    isLoading: false,
+                    isLogged: true,
+                    token: action.payload,
+                    error: ''
+                }))
             return {
                 ...state,
                 isLoading: false,
