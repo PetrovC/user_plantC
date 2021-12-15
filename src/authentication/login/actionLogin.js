@@ -29,7 +29,7 @@ export const LoginRequest = ({email, password}) => {
         
         dispatch(APILogin())
 
-        axios.post('http://192.168.10.60:81/Login', {email, password})
+        axios.post('https://', {email, password})
         .then(res => {
             dispatch(APILoginSuccess(res.data))
         })

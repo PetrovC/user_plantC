@@ -1,8 +1,11 @@
 import {LOGIN, LOGIN_SUCCESS, LOGIN_ERROR } from './typeLogin'
 import {LOGOUT } from '../logout/typeLogout'
 
-const initialStateComments = {
+const loginKey = "login"
+let localdata = JSON.parse(localStorage.getItem(loginKey))
 
+const initialStateComments = localdata || {
+    
     isLoading: false,
     isLogged: false,
     token: '',
@@ -20,11 +23,18 @@ const reducerLogin = (state = initialStateComments, action) => {
                 error: ''
             }
         case LOGIN_SUCCESS:
+            localStorage.setItem(loginKey, JSON.stringify({
+                ...state,
+                isLoading: false,
+                isLogged: true,
+                token: action.payload,
+                error: ''
+            }))
             return {
                 ...state,
                 isLoading: false,
                 isLogged: true,
-                token: action.payload.token,
+                token: action.payload,
                 error: ''
             }
         case LOGIN_ERROR:

@@ -1,14 +1,18 @@
+
 import { createSlice } from "@reduxjs/toolkit";
+
+const missionsKey = 'missions';
+
 
 export const missionsSlice = createSlice({
     name: 'missions',
     initialState: {
-        __persist : true,
         selectedMission : null,
-        list: [],
+        list: JSON.parse(localStorage.getItem(missionsKey)) || [],
     },
     reducers:{
         loadMissions: (state, {payload} ) => {
+            localStorage.setItem(missionsKey, JSON.stringify(payload))
             state.list = payload;
 
         },
