@@ -22,7 +22,7 @@ const DetailMission = () => {
             <TextField disabled label="Description" value={selectedMission.description} sx={{padding: 1.5}}/>
             <TextField disabled label="Info Mission" value={selectedMission.type} sx={{padding: 1.5}}/>
         </div>}
-        <CommButtons/>
+        {/* <CommButtons/> */}
         </>
     )
 }
