@@ -14,10 +14,6 @@ const Login = () => {
     const dispatch = useDispatch();
 
     const loginState = useSelector(state => state.login);
-
-    useEffect(() => {
-        console.log(loginState.token)
-    }, [loginState])
     
     const defaultValues = {
         email: '',

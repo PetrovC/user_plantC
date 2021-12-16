@@ -10,7 +10,6 @@ export const logoutRequest = () => {
     return dispatch => {
 
         dispatch(Logout())
-        console.log('logout')
 
     }
 }

@@ -9,7 +9,7 @@ const initialStateComments = localdata || {
     isLoading: false,
     isLogged: false,
     token: '',
-    error: ''
+    error: '',
 }
 
 const reducerLogin = (state = initialStateComments, action) => {
